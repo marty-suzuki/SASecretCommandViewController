@@ -1,0 +1,8 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+
+target 'SASecretCommandViewController', :exclusive => true do
+  pod "SASecretCommandViewController", :path => "../"
+
+  
+end

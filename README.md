@@ -18,6 +18,11 @@ it, simply add the following line to your Podfile:
 
     pod "SASecretCommandViewController"
 
+## Other
+
+A sample of this project uses "[MSAlertController
+](https://github.com/szk-atmosphere/MSAlertController)" as custom UIAlertController.
+
 ## Author
 
 Taiki Suzuki, s1180183@gmail.com

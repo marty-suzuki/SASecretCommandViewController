@@ -36,6 +36,9 @@ class ViewController: SASecretCommandViewController {
     
     override func secretCommandPassed() {
         super.secretCommandPassed()
+        
+        let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 }
 

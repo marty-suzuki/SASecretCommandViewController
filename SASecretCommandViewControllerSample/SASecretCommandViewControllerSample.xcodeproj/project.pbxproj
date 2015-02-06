@@ -13,6 +13,7 @@
 		373D3A061A850F4C0022D4B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373D3A051A850F4C0022D4B9 /* Images.xcassets */; };
 		373D3A091A850F4C0022D4B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 373D3A071A850F4C0022D4B9 /* LaunchScreen.xib */; };
 		373D3A151A850F4C0022D4B9 /* SASecretCommandViewControllerSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D3A141A850F4C0022D4B9 /* SASecretCommandViewControllerSampleTests.swift */; };
+		373D3A201A8510080022D4B9 /* SASecretCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D3A1F1A8510080022D4B9 /* SASecretCommandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		373D3A0E1A850F4C0022D4B9 /* SASecretCommandViewControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SASecretCommandViewControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		373D3A131A850F4C0022D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373D3A141A850F4C0022D4B9 /* SASecretCommandViewControllerSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SASecretCommandViewControllerSampleTests.swift; sourceTree = "<group>"; };
+		373D3A1F1A8510080022D4B9 /* SASecretCommandViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SASecretCommandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		373D39FB1A850F4C0022D4B9 /* SASecretCommandViewControllerSample */ = {
 			isa = PBXGroup;
 			children = (
+				373D3A1E1A850FDF0022D4B9 /* SASecretCommandViewController */,
 				373D39FE1A850F4C0022D4B9 /* AppDelegate.swift */,
 				373D3A001A850F4C0022D4B9 /* ViewController.swift */,
 				373D3A021A850F4C0022D4B9 /* Main.storyboard */,
@@ -110,6 +113,15 @@
 				373D3A131A850F4C0022D4B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		373D3A1E1A850FDF0022D4B9 /* SASecretCommandViewController */ = {
+			isa = PBXGroup;
+			children = (
+				373D3A1F1A8510080022D4B9 /* SASecretCommandViewController.swift */,
+			);
+			name = SASecretCommandViewController;
+			path = ../../SASecretCommandViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +226,7 @@
 			files = (
 				373D3A011A850F4C0022D4B9 /* ViewController.swift in Sources */,
 				373D39FF1A850F4C0022D4B9 /* AppDelegate.swift in Sources */,
+				373D3A201A8510080022D4B9 /* SASecretCommandViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +350,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SASecretCommandViewControllerSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -347,6 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SASecretCommandViewControllerSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

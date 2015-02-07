@@ -6,9 +6,9 @@
 [![License](https://img.shields.io/cocoapods/l/SASecretCommandViewController.svg?style=flat)](http://cocoadocs.org/docsets/SASecretCommandViewController)
 [![Platform](https://img.shields.io/cocoapods/p/SASecretCommandViewController.svg?style=flat)](http://cocoadocs.org/docsets/SASecretCommandViewController)
 
-![](./SampleImage/secret.gif)
+#### You can use secret command with swipe gesture and A, B button. Show a secret mode you want!
 
-You can use secret command with swipe gesture and A, B button.
+![](./SampleImage/secret.gif)
 
 ## Features
 
@@ -78,27 +78,27 @@ if passed the secret command, called `public func secretCommandPassed()`. Please
 For example, showing custom alert.
 ```swift
 override func secretCommandPassed() {
-        super.secretCommandPassed()
-        
-        let font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 16.0)
-        let redColor = UIColor.redColor()
-        
-        let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
-        controller.alertBackgroundColor = .blackColor()
-        controller.titleColor = redColor
-        controller.separatorColor = redColor
-        controller.messageColor = redColor
-        controller.titleFont = font
-        controller.messageFont = font
-        let action = MSAlertAction(title: "OK", style: .Default) { (action) in
-            self.imageView.image = UIImage(named: "secret")
-        }
-        action.titleColor = redColor
-        action.highlightedColor = .grayColor()
-        action.font = font
-        controller.addAction(action)
-        self.presentViewController(controller, animated: true, completion: nil)
+    super.secretCommandPassed()
+    
+    let font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 16.0)
+    let redColor = UIColor.redColor()
+    
+    let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
+    controller.alertBackgroundColor = .blackColor()
+    controller.titleColor = redColor
+    controller.separatorColor = redColor
+    controller.messageColor = redColor
+    controller.titleFont = font
+    controller.messageFont = font
+    let action = MSAlertAction(title: "OK", style: .Default) { (action) in
+        self.imageView.image = UIImage(named: "secret")
     }
+    action.titleColor = redColor
+    action.highlightedColor = .grayColor()
+    action.font = font
+    controller.addAction(action)
+    self.presentViewController(controller, animated: true, completion: nil)
+}
 ```
 
 ## Requirements

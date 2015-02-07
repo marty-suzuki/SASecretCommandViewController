@@ -15,6 +15,8 @@ public class SASecretCommandViewController: UIViewController {
     private var buttonView: SASecreatCommandButtonView!
     private var keyView: SASecretCommandKeyView!
     
+    public var showInputCommand = false
+    
     private var upGesture: UISwipeGestureRecognizer!
     private var downGesture: UISwipeGestureRecognizer!
     private var leftGesture: UISwipeGestureRecognizer!
@@ -73,6 +75,38 @@ public class SASecretCommandViewController: UIViewController {
         return false
     }
     
+//    private func showButtonView() {
+//        
+//        self.buttonView = self.createButtonView()
+//        self.buttonView.alpha = 0.0
+//        self.buttonView.transform = CGAffineTransformMakeScale(1.2, 1.2)
+//        self.view.addSubview(self.buttonView)
+//        self.removeGesture()
+//        
+//        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+//            
+//            self.buttonView.alpha = 1.0
+//            self.buttonView.transform = CGAffineTransformIdentity
+//
+//        }, completion: { (finished) in
+//            
+//        })
+//    }
+//    
+//    private func hideButtonView() {
+//        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+//            
+//            self.buttonView.alpha = 0.0
+//            self.buttonView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+//            
+//        }, completion: { (finished) in
+//            
+//            self.buttonView?.removeFromSuperview()
+//            self.addGesture()
+//            
+//        })
+//    }
+    
     private func createKeyView(commandType: SASecretCommandType) -> SASecretCommandKeyView {
         let keyView = SASecretCommandKeyView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         keyView.center = CGPoint(x: self.view.frame.size.width / 2.0, y: self.view.frame.size.height / 2.0)
@@ -81,22 +115,26 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     private func removeKeyView() {
-        self.keyView.removeFromSuperview()
+        self.keyView?.removeFromSuperview()
     }
     
     private func showKeyView(command: SASecretCommandType) {
-        self.keyView = self.createKeyView(command)
-        self.keyView.alpha = 0.0
-        self.view.addSubview(self.keyView)
-        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
-            self.keyView.alpha = 1.0
-        }, completion: { (finished) in
+        if self.showInputCommand {
+            self.keyView?.removeFromSuperview()
+            
+            self.keyView = self.createKeyView(command)
+            self.keyView.alpha = 0.0
+            self.view.addSubview(self.keyView)
             UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
-                self.keyView.alpha = 0.0
+                self.keyView.alpha = 1.0
             }, completion: { (finished) in
-                self.removeKeyView()
+                UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+                    self.keyView.alpha = 0.0
+                }, completion: { (finished) in
+                    self.removeKeyView()
+                })
             })
-        })
+        }
     }
     
     func detectSwipeGesture(gesture: UISwipeGestureRecognizer) {

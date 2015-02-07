@@ -25,6 +25,8 @@ class SASecreatCommandButtonView: UIView {
     }
     
     private func initialize() {
+        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4)
+        
         self.buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
         self.buttonContainerView.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
         self.buttonContainerView.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
@@ -136,7 +138,7 @@ class SASecretCommandKeyView: UIView {
     
     private func initialize() {
         self.userInteractionEnabled = false
-        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.7)
+        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
         self.layer.cornerRadius = 30.0
         self.layer.borderColor = UIColor.whiteColor().CGColor
         self.layer.borderWidth = 5

@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: SASecretCommandViewController {
     
+    var imageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +30,11 @@ class ViewController: SASecretCommandViewController {
         ]
         
         self.registerSecretCommand(commandList)
+        self.showInputCommand = true
+        
+        self.imageView.frame = self.view.bounds
+        self.imageView.image = UIImage(named: "normal")
+        self.view.addSubview(self.imageView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +55,9 @@ class ViewController: SASecretCommandViewController {
         controller.messageColor = redColor
         controller.titleFont = font
         controller.messageFont = font
-        let action = MSAlertAction(title: "OK", style: .Default) { (action) in }
+        let action = MSAlertAction(title: "OK", style: .Default) { (action) in
+            self.imageView.image = UIImage(named: "secret")
+        }
         action.titleColor = redColor
         action.highlightedColor = .grayColor()
         action.font = font

@@ -198,8 +198,3 @@ extension SASecretCommandViewController: SASecreatCommandButtonViewDelegate {
         self.showKeyView(.B)
     }
 }
-
-protocol SASecreatCommandButtonViewDelegate: class {
-    func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView)
-    func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView)
-}

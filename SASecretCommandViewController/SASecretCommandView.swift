@@ -90,6 +90,11 @@ class SASecreatCommandButtonView: UIView {
     }
 }
 
+protocol SASecreatCommandButtonViewDelegate: class {
+    func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView)
+    func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView)
+}
+
 class SASecretCommandKeyView: UIView {
     
     private var arrow: SASecretCommandArrowView!

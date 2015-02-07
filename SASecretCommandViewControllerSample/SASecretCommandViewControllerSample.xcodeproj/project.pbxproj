@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370EAF021A85ACED009C9075 /* SASecretCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370EAF011A85ACED009C9075 /* SASecretCommandView.swift */; };
+		370EAF041A85AE8A009C9075 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370EAF031A85AE8A009C9075 /* QuartzCore.framework */; };
 		373D39FF1A850F4C0022D4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D39FE1A850F4C0022D4B9 /* AppDelegate.swift */; };
 		373D3A011A850F4C0022D4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373D3A001A850F4C0022D4B9 /* ViewController.swift */; };
 		373D3A041A850F4C0022D4B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373D3A021A850F4C0022D4B9 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		0979B6C0C33047DFEB5C4974 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		17EDDFE90E0A5AADB429A2CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		370EAF011A85ACED009C9075 /* SASecretCommandView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SASecretCommandView.swift; sourceTree = "<group>"; };
+		370EAF031A85AE8A009C9075 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		373D39F91A850F4C0022D4B9 /* SASecretCommandViewControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SASecretCommandViewControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		373D39FD1A850F4C0022D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373D39FE1A850F4C0022D4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370EAF041A85AE8A009C9075 /* QuartzCore.framework in Frameworks */,
 				407C97538354E0271390758E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				373D3A241A852F6D0022D4B9 /* SASecretCommandManager.swift */,
+				370EAF011A85ACED009C9075 /* SASecretCommandView.swift */,
 				373D3A251A852F6D0022D4B9 /* SASecretCommandViewController.swift */,
 			);
 			name = SASecretCommandViewController;
@@ -148,6 +154,7 @@
 		6CF91D631B7785D720566D6D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				370EAF031A85AE8A009C9075 /* QuartzCore.framework */,
 				5A08EDBE8431997E0DDE0D81 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -288,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370EAF021A85ACED009C9075 /* SASecretCommandView.swift in Sources */,
 				373D3A261A852F6D0022D4B9 /* SASecretCommandManager.swift in Sources */,
 				373D3A011A850F4C0022D4B9 /* ViewController.swift in Sources */,
 				373D3A271A852F6D0022D4B9 /* SASecretCommandViewController.swift in Sources */,

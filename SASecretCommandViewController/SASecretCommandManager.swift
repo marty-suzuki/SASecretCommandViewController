@@ -48,6 +48,7 @@ protocol SASecretCommandManagerDelegate: class {
 }
 
 class SASecretCommandManager: NSObject {
+    
     private var commandStack = [SASecretCommandType]()
     var secretCommandList: [SASecretCommandType]!
     weak var delegate: SASecretCommandManagerDelegate!
@@ -57,7 +58,6 @@ class SASecretCommandManager: NSObject {
         
         if (index > self.secretCommandList.count - 1) {
             self.commandStack.removeAll(keepCapacity: false)
-            println("remove 1")
             return;
         }
         
@@ -65,8 +65,25 @@ class SASecretCommandManager: NSObject {
             if secretCommand == command {
                 self.commandStack.append(command)
                 
-                if index + 1 < self.secretCommandList.count {
-                    if let nextCommand = self.secretCommandList?[index + 1] {
+                if let nextCommand = self.secretCommandList?.next(index) {
+                    switch nextCommand {
+                        case .A, .B:
+                            self.delegate?.secretCommandManagerShowButtonView(self)
+                        case .Up, .Down, .Left, .Right:
+                            self.delegate?.secretCommandManagerCloseButtonView(self)
+                    }
+                }
+            } else {
+                if index > 0 {
+                    self.commandStack.removeAll(keepCapacity: false)
+                    
+                    if let secretCommand = self.secretCommandList.first {
+                        if secretCommand == command {
+                            self.commandStack.append(command)
+                        }
+                    }
+                    
+                    if let nextCommand = self.secretCommandList?.next(0) {
                         switch nextCommand {
                             case .A, .B:
                                 self.delegate?.secretCommandManagerShowButtonView(self)
@@ -74,12 +91,7 @@ class SASecretCommandManager: NSObject {
                                 self.delegate?.secretCommandManagerCloseButtonView(self)
                         }
                     }
-                }
-                
-            } else {
-                if index > 0 {
-                    self.commandStack.removeAll(keepCapacity: false)
-                    println("remove 2")
+                    
                     return;
                 }
             }
@@ -94,7 +106,19 @@ class SASecretCommandManager: NSObject {
             
             self.delegate?.secretCommandManagerSecretCommandPassed(self)
             self.commandStack.removeAll(keepCapacity: false)
-            println("remove 3")
         }
+    }
+}
+
+private extension Array {
+    private func hasNext(index: Int) -> Bool {
+        return self.count > index + 1
+    }
+    
+    func next(index: Int) -> T? {
+        if self.hasNext(index) {
+            return self[index + 1]
+        }
+        return nil
     }
 }

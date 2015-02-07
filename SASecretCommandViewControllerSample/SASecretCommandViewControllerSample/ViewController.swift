@@ -26,6 +26,7 @@ class ViewController: SASecretCommandViewController {
             .B,
             .A
         ]
+        
         self.registerSecretCommand(commandList)
     }
 
@@ -37,7 +38,21 @@ class ViewController: SASecretCommandViewController {
     override func secretCommandPassed() {
         super.secretCommandPassed()
         
+        let font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 16.0)
+        let redColor = UIColor.redColor()
+        
         let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
+        controller.alertBackgroundColor = .blackColor()
+        controller.titleColor = redColor
+        controller.separatorColor = redColor
+        controller.messageColor = redColor
+        controller.titleFont = font
+        controller.messageFont = font
+        let action = MSAlertAction(title: "OK", style: .Default) { (action) in }
+        action.titleColor = redColor
+        action.highlightedColor = .grayColor()
+        action.font = font
+        controller.addAction(action)
         self.presentViewController(controller, animated: true, completion: nil)
     }
 }

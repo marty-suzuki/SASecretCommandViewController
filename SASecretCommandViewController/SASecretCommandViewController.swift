@@ -11,7 +11,10 @@ import UIKit
 public class SASecretCommandViewController: UIViewController {
 
     private let commandManager = SASecretCommandManager()
+    
     private var buttonView: SASecreatCommandButtonView!
+    private var keyView: SASecretCommandKeyView!
+    
     private var upGesture: UISwipeGestureRecognizer!
     private var downGesture: UISwipeGestureRecognizer!
     private var leftGesture: UISwipeGestureRecognizer!
@@ -70,12 +73,38 @@ public class SASecretCommandViewController: UIViewController {
         return false
     }
     
+    private func createKeyView(commandType: SASecretCommandType) -> SASecretCommandKeyView {
+        let keyView = SASecretCommandKeyView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
+        keyView.center = CGPoint(x: self.view.frame.size.width / 2.0, y: self.view.frame.size.height / 2.0)
+        keyView.commandType = commandType
+        return keyView
+    }
+    
+    private func removeKeyView() {
+        self.keyView.removeFromSuperview()
+    }
+    
+    private func showKeyView(command: SASecretCommandType) {
+        self.keyView = self.createKeyView(command)
+        self.keyView.alpha = 0.0
+        self.view.addSubview(self.keyView)
+        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+            self.keyView.alpha = 1.0
+        }, completion: { (finished) in
+            UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+                self.keyView.alpha = 0.0
+            }, completion: { (finished) in
+                self.removeKeyView()
+            })
+        })
+    }
+    
     func detectSwipeGesture(gesture: UISwipeGestureRecognizer) {
         let crossKeyCommand = SASecretCommandType.convert(gesture.direction)
-        
-        println("\(crossKeyCommand.value())")
-        
+
         self.commandManager.checkCommand(crossKeyCommand)
+        
+        self.showKeyView(crossKeyCommand)
     }
     
     public func registerSecretCommand(commandList: [SASecretCommandType]) {
@@ -95,9 +124,7 @@ public class SASecretCommandViewController: UIViewController {
         self.commandManager.secretCommandList = commandList
     }
     
-    public func secretCommandPassed() {
-        println("command passed")
-    }
+    public func secretCommandPassed() {}
 }
 
 extension SASecretCommandViewController: SASecretCommandManagerDelegate {
@@ -122,58 +149,19 @@ extension SASecretCommandViewController: SASecretCommandManagerDelegate {
 
 extension SASecretCommandViewController: SASecreatCommandButtonViewDelegate {
     func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView) {
-        println("A")
         self.commandManager.checkCommand(.A)
+        
+        self.showKeyView(.A)
     }
     
     func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView) {
-        println("B")
         self.commandManager.checkCommand(.B)
+        
+        self.showKeyView(.B)
     }
 }
 
 protocol SASecreatCommandButtonViewDelegate: class {
     func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView)
     func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView)
-}
-
-class SASecreatCommandButtonView: UIView {
-    
-    private var buttonContainerView: UIView!
-    weak var delegate: SASecreatCommandButtonViewDelegate!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.initialize()
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.initialize()
-    }
-    
-    private func initialize() {
-        self.buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        self.buttonContainerView.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
-        self.buttonContainerView.backgroundColor = .redColor()
-        self.addSubview(self.buttonContainerView)
-        
-        let aButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        aButton.setTitle("A", forState: .Normal)
-        aButton.addTarget(self, action: "aButtonTapped:", forControlEvents: .TouchUpInside)
-        self.buttonContainerView.addSubview(aButton)
-        
-        let bButton = UIButton(frame: CGRect(x: 100, y: 0, width: 100, height: 100))
-        bButton.setTitle("B", forState: .Normal)
-        bButton.addTarget(self, action: "bButtonTapped:", forControlEvents: .TouchUpInside)
-        self.buttonContainerView.addSubview(bButton)
-    }
-    
-    func aButtonTapped(sender: AnyObject) {
-        self.delegate?.secretCommandButtonViewAButtonTapped(self)
-    }
-    
-    func bButtonTapped(sender: AnyObject) {
-        self.delegate?.secretCommandButtonViewBButtonTapped(self)
-    }
 }

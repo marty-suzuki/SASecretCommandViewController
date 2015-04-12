@@ -29,12 +29,12 @@ class ViewController: SASecretCommandViewController {
             .A
         ]
         
-        self.registerSecretCommand(commandList)
-        self.showInputCommand = true
+        registerSecretCommand(commandList)
+        showInputCommand = true
         
-        self.imageView.frame = self.view.bounds
-        self.imageView.image = UIImage(named: "normal")
-        self.view.addSubview(self.imageView)
+        imageView.frame = view.bounds
+        imageView.image = UIImage(named: "normal")
+        view.addSubview(imageView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +62,7 @@ class ViewController: SASecretCommandViewController {
         action.highlightedColor = .grayColor()
         action.font = font
         controller.addAction(action)
-        self.presentViewController(controller, animated: true, completion: nil)
+        presentViewController(controller, animated: true, completion: nil)
     }
 }
 

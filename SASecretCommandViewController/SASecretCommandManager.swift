@@ -10,7 +10,7 @@ import UIKit
 
 public enum SASecretCommandType {
     case Up, Down, Left, Right, A, B
-    static func convert(direction: UISwipeGestureRecognizerDirection) -> SASecretCommandType! {
+    static func convert(direction: UISwipeGestureRecognizerDirection) -> SASecretCommandType? {
         if direction == .Right {
             return .Right
         } else if direction == .Left {
@@ -50,73 +50,75 @@ protocol SASecretCommandManagerDelegate: class {
 class SASecretCommandManager: NSObject {
     
     private var commandStack = [SASecretCommandType]()
-    var secretCommandList: [SASecretCommandType]!
-    weak var delegate: SASecretCommandManagerDelegate!
+    var secretCommandList: [SASecretCommandType]?
+    weak var delegate: SASecretCommandManagerDelegate?
 
     func checkCommand(command: SASecretCommandType) {
-        let index = self.commandStack.count
+        let index = commandStack.count
         
-        if (index > self.secretCommandList.count - 1) {
-            self.commandStack.removeAll(keepCapacity: false)
-            return;
-        }
-        
-        if let secretCommand = self.secretCommandList?[index] {
-            if secretCommand == command {
-                self.commandStack.append(command)
-                
-                if let nextCommand = self.secretCommandList?.next(index) {
-                    switch nextCommand {
-                        case .A, .B:
-                            self.delegate?.secretCommandManagerShowButtonView(self)
-                        case .Up, .Down, .Left, .Right:
-                            self.delegate?.secretCommandManagerCloseButtonView(self)
-                    }
-                }
-            } else {
-                if index > 0 {
-                    self.commandStack.removeAll(keepCapacity: false)
+        if let secretCommandList = secretCommandList {
+            if (index > secretCommandList.count - 1) {
+                commandStack.removeAll(keepCapacity: false)
+                return
+            }
+            
+            if let secretCommand = self.secretCommandList?[index] {
+                if secretCommand == command {
+                    commandStack.append(command)
                     
-                    if let secretCommand = self.secretCommandList.first {
-                        if secretCommand == command {
-                            self.commandStack.append(command)
-                        }
-                    }
-                    
-                    if let nextCommand = self.secretCommandList?.next(0) {
+                    if let nextCommand = secretCommandList.next(index) {
                         switch nextCommand {
                             case .A, .B:
-                                self.delegate?.secretCommandManagerShowButtonView(self)
+                                delegate?.secretCommandManagerShowButtonView(self)
                             case .Up, .Down, .Left, .Right:
-                                self.delegate?.secretCommandManagerCloseButtonView(self)
+                                delegate?.secretCommandManagerCloseButtonView(self)
                         }
                     }
-                    
-                    return;
-                }
-            }
-        }
-        
-        if self.commandStack.count == self.secretCommandList.count {
-            for (index, secretCommand) in enumerate(self.secretCommandList) {
-                if (secretCommand != self.commandStack[index]) {
-                    return;
+                } else {
+                    if index > 0 {
+                        commandStack.removeAll(keepCapacity: false)
+                        
+                        if let secretCommand = secretCommandList.first {
+                            if secretCommand == command {
+                                commandStack.append(command)
+                            }
+                        }
+                        
+                        if let nextCommand = secretCommandList.next(0) {
+                            switch nextCommand {
+                                case .A, .B:
+                                    delegate?.secretCommandManagerShowButtonView(self)
+                                case .Up, .Down, .Left, .Right:
+                                    delegate?.secretCommandManagerCloseButtonView(self)
+                            }
+                        }
+                        
+                        return
+                    }
                 }
             }
             
-            self.delegate?.secretCommandManagerSecretCommandPassed(self)
-            self.commandStack.removeAll(keepCapacity: false)
+            if commandStack.count == secretCommandList.count {
+                for (index, secretCommand) in enumerate(secretCommandList) {
+                    if (secretCommand != self.commandStack[index]) {
+                        return
+                    }
+                }
+                
+                delegate?.secretCommandManagerSecretCommandPassed(self)
+                commandStack.removeAll(keepCapacity: false)
+            }
         }
     }
 }
 
 private extension Array {
     private func hasNext(index: Int) -> Bool {
-        return self.count > index + 1
+        return count > index + 1
     }
     
     func next(index: Int) -> T? {
-        if self.hasNext(index) {
+        if hasNext(index) {
             return self[index + 1]
         }
         return nil

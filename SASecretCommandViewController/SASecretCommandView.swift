@@ -11,45 +11,46 @@ import QuartzCore
 
 class SASecreatCommandButtonView: UIView {
     
-    private var buttonContainerView: UIView!
-    weak var delegate: SASecreatCommandButtonViewDelegate!
+    private var buttonContainerView: UIView?
+    weak var delegate: SASecreatCommandButtonViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.initialize()
+        initialize()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initialize()
+        initialize()
     }
     
     private func initialize() {
-        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4)
+        backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4)
         
-        self.buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        self.buttonContainerView.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
-        self.buttonContainerView.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
-        self.buttonContainerView.layer.cornerRadius = 10.0
-        self.addSubview(self.buttonContainerView)
+        let buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+        buttonContainerView.center = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
+        buttonContainerView.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
+        buttonContainerView.layer.cornerRadius = 10.0
+        addSubview(buttonContainerView)
+        self.buttonContainerView = buttonContainerView
         
         let colorView = UIView(frame: CGRect(x: 10.0, y: 10.0, width: 180, height: 80))
         colorView.backgroundColor = UIColor(red: 225.0 / 255.0, green: 215.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
         colorView.layer.cornerRadius = 5.0
-        self.buttonContainerView.addSubview(colorView)
+        buttonContainerView.addSubview(colorView)
         
         let line1 = UIView(frame: CGRect(x: 10.0, y: 60.0, width: 180.0, height: 3.0))
         line1.backgroundColor = .blackColor()
-        self.buttonContainerView.addSubview(line1)
+        buttonContainerView.addSubview(line1)
         
         let line2 = UIView(frame: CGRect(x: 10.0, y: 70.0, width: 180.0, height: 3.0))
         line2.backgroundColor = .blackColor()
-        self.buttonContainerView.addSubview(line2)
+        buttonContainerView.addSubview(line2)
         
         let aButtonContainer = UIView(frame: CGRect(x: 20, y: 20, width: 60, height: 60))
         aButtonContainer.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
         aButtonContainer.layer.cornerRadius = 30
-        self.buttonContainerView.addSubview(aButtonContainer)
+        buttonContainerView.addSubview(aButtonContainer)
         
         let aButtonColor = UIView(frame: CGRect(x: 5, y: 5, width: 50, height: 50))
         aButtonColor.backgroundColor = .blackColor()
@@ -63,10 +64,10 @@ class SASecreatCommandButtonView: UIView {
         aButton.addTarget(self, action: "aButtonTapped:", forControlEvents: .TouchUpInside)
         aButtonContainer.addSubview(aButton)
         
-        let bButtonContainer = UIView(frame: CGRect(x: self.buttonContainerView.frame.size.width - 80, y:20, width: 60, height: 60))
+        let bButtonContainer = UIView(frame: CGRect(x: buttonContainerView.frame.size.width - 80, y:20, width: 60, height: 60))
         bButtonContainer.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
         bButtonContainer.layer.cornerRadius = 30
-        self.buttonContainerView.addSubview(bButtonContainer)
+        buttonContainerView.addSubview(bButtonContainer)
         
         let bButtonColor = UIView(frame: CGRect(x: 5, y: 5, width: 50, height: 50))
         bButtonColor.backgroundColor = .blackColor()
@@ -82,11 +83,11 @@ class SASecreatCommandButtonView: UIView {
     }
     
     func aButtonTapped(sender: AnyObject) {
-        self.delegate?.secretCommandButtonViewAButtonTapped(self)
+        delegate?.secretCommandButtonViewAButtonTapped(self)
     }
     
     func bButtonTapped(sender: AnyObject) {
-        self.delegate?.secretCommandButtonViewBButtonTapped(self)
+        delegate?.secretCommandButtonViewBButtonTapped(self)
     }
 }
 
@@ -97,67 +98,68 @@ protocol SASecreatCommandButtonViewDelegate: class {
 
 class SASecretCommandKeyView: UIView {
     
-    private var arrow: SASecretCommandArrowView!
-    private var commandLabel: UILabel!
+    private var arrow: SASecretCommandArrowView?
+    private var commandLabel: UILabel?
     
-    private var _commandType: SASecretCommandType!
-    var commandType: SASecretCommandType! {
-        set {
-            _commandType = newValue
-            
-            switch _commandType! {
-                case .A, .B:
-                    self.commandLabel = self.createCommandLabel(_commandType.value())
-                    self.addSubview(self.commandLabel)
-                case .Up:
-                    self.arrow = self.createArrowView()
-                    self.addSubview(self.arrow)
-                case .Down:
-                    self.arrow = self.createArrowView()
-                    self.arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
-                    self.addSubview(self.arrow)
-                case .Left:
-                    self.arrow = self.createArrowView()
-                    self.arrow.layer.transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                    self.addSubview(self.arrow)
-                case .Right:
-                    self.arrow = self.createArrowView()
-                    self.arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                    self.addSubview(self.arrow)
+    var commandType: SASecretCommandType? {
+        didSet {
+            if  let commandType = commandType {
+                switch commandType {
+                    case .A, .B:
+                        let commandLabel = createCommandLabel(commandType.value())
+                        addSubview(commandLabel)
+                        self.commandLabel = commandLabel
+                    case .Up:
+                        let arrow = createArrowView()
+                        addSubview(arrow)
+                        self.arrow = arrow
+                    case .Down:
+                        let arrow = createArrowView()
+                        arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
+                        addSubview(arrow)
+                        self.arrow = arrow
+                    case .Left:
+                        let arrow = createArrowView()
+                        arrow.layer.transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
+                        addSubview(arrow)
+                        self.arrow = arrow
+                    case .Right:
+                        let arrow = createArrowView()
+                        arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
+                        addSubview(arrow)
+                        self.arrow = arrow
+                }
             }
-        }
-        get {
-            return _commandType
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.initialize()
+        initialize()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initialize()
+        initialize()
     }
     
     private func initialize() {
-        self.userInteractionEnabled = false
-        self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
-        self.layer.cornerRadius = 30.0
-        self.layer.borderColor = UIColor.whiteColor().CGColor
-        self.layer.borderWidth = 5
+        userInteractionEnabled = false
+        backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
+        layer.cornerRadius = 30.0
+        layer.borderColor = UIColor.whiteColor().CGColor
+        layer.borderWidth = 5
     }
     
     private func createArrowView() -> SASecretCommandArrowView {
         let arrow = SASecretCommandArrowView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        arrow.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
+        arrow.center = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
         return arrow
     }
     
     private func createCommandLabel(string: String) -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        label.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
+        label.center = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
         label.text = string
         label.textColor = .whiteColor()
         label.textAlignment = .Center
@@ -170,12 +172,12 @@ private class SASecretCommandArrowView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .clearColor()
+        backgroundColor = .clearColor()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .clearColor()
+        backgroundColor = .clearColor()
     }
     
     private override func drawRect(rect: CGRect) {

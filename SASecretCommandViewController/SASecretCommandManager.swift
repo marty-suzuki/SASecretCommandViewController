@@ -8,35 +8,26 @@
 
 import UIKit
 
-public enum SASecretCommandType {
-    case Up, Down, Left, Right, A, B
-    static func convert(direction: UISwipeGestureRecognizerDirection) -> SASecretCommandType? {
-        if direction == .Right {
-            return .Right
-        } else if direction == .Left {
-            return .Left
-        } else if direction == .Down {
-            return .Down
-        } else if direction == .Up {
-            return .Up
-        }
-        return nil
-    }
+public enum SASecretCommandType: String {
+    case Up = "Up"
+    case Down = "Down"
+    case Left = "Left"
+    case Right = "Right"
+    case A = "A"
+    case B = "B"
     
-    func value() -> String {
-        switch self {
-            case .Up:
-                return "Up"
-            case .Down:
-                return "Down"
-            case .Left:
-                return "Left"
-            case .Right:
-                return "Right"
-            case .A:
-                return "A"
-            case B:
-                return "B"
+    static func convert(direction: UISwipeGestureRecognizerDirection) -> SASecretCommandType? {
+        switch direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                return .Right
+            case UISwipeGestureRecognizerDirection.Left:
+                return .Left
+            case UISwipeGestureRecognizerDirection.Down:
+                return .Down
+            case UISwipeGestureRecognizerDirection.Up:
+                return .Up
+            default:
+                return nil
         }
     }
 }

@@ -19,7 +19,7 @@ class SASecreatCommandButtonView: UIView {
         initialize()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         initialize()
     }
@@ -103,32 +103,33 @@ class SASecretCommandKeyView: UIView {
     
     var commandType: SASecretCommandType? {
         didSet {
-            if  let commandType = commandType {
-                switch commandType {
-                    case .A, .B:
-                        let commandLabel = createCommandLabel(commandType.value())
-                        addSubview(commandLabel)
-                        self.commandLabel = commandLabel
-                    case .Up:
-                        let arrow = createArrowView()
-                        addSubview(arrow)
-                        self.arrow = arrow
-                    case .Down:
-                        let arrow = createArrowView()
-                        arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
-                        addSubview(arrow)
-                        self.arrow = arrow
-                    case .Left:
-                        let arrow = createArrowView()
-                        arrow.layer.transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                        addSubview(arrow)
-                        self.arrow = arrow
-                    case .Right:
-                        let arrow = createArrowView()
-                        arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                        addSubview(arrow)
-                        self.arrow = arrow
-                }
+            guard let commandType = commandType else {
+                return
+            }
+            switch commandType {
+                case .A, .B:
+                    let commandLabel = createCommandLabel(commandType.rawValue)
+                    addSubview(commandLabel)
+                    self.commandLabel = commandLabel
+                case .Up:
+                    let arrow = createArrowView()
+                    addSubview(arrow)
+                    self.arrow = arrow
+                case .Down:
+                    let arrow = createArrowView()
+                    arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
+                    addSubview(arrow)
+                    self.arrow = arrow
+                case .Left:
+                    let arrow = createArrowView()
+                    arrow.layer.transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
+                    addSubview(arrow)
+                    self.arrow = arrow
+                case .Right:
+                    let arrow = createArrowView()
+                    arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
+                    addSubview(arrow)
+                    self.arrow = arrow
             }
         }
     }
@@ -138,7 +139,7 @@ class SASecretCommandKeyView: UIView {
         initialize()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         initialize()
     }
@@ -175,7 +176,7 @@ private class SASecretCommandArrowView: UIView {
         backgroundColor = .clearColor()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         backgroundColor = .clearColor()
     }

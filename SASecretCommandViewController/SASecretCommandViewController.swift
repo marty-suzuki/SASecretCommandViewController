@@ -154,10 +154,11 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     func detectSwipeGesture(gesture: UISwipeGestureRecognizer) {
-        if let crossKeyCommand = SASecretCommandType.convert(gesture.direction) {
-            commandManager.checkCommand(crossKeyCommand)
-            showKeyView(crossKeyCommand)
+        guard let crossKeyCommand = SASecretCommandType.convert(gesture.direction) else {
+            return
         }
+        commandManager.checkCommand(crossKeyCommand)
+        showKeyView(crossKeyCommand)
     }
     
     public func registerSecretCommand(commandList: [SASecretCommandType]) {

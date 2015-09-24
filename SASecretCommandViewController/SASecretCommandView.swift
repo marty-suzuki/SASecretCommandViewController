@@ -20,7 +20,7 @@ class SASecreatCommandButtonView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         initialize()
     }
     
@@ -139,7 +139,7 @@ class SASecretCommandKeyView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         initialize()
     }
     
@@ -176,7 +176,7 @@ private class SASecretCommandArrowView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         backgroundColor = .clearColor()
     }
     
@@ -203,6 +203,6 @@ private class SASecretCommandArrowView: UIView {
         
         CGContextClosePath(context)
     
-        CGContextDrawPath(context, kCGPathFillStroke);
+        CGContextDrawPath(context, CGPathDrawingMode.FillStroke);
     }
 }

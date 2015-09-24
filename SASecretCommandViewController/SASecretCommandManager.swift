@@ -99,7 +99,7 @@ class SASecretCommandManager: NSObject {
             }
             
             if commandStack.count == secretCommandList.count {
-                for (index, secretCommand) in enumerate(secretCommandList) {
+                for (index, secretCommand) in secretCommandList.enumerate() {
                     if (secretCommand != self.commandStack[index]) {
                         return
                     }
@@ -117,7 +117,7 @@ private extension Array {
         return count > index + 1
     }
     
-    func next(index: Int) -> T? {
+    func next(index: Int) -> Element? {
         if hasNext(index) {
             return self[index + 1]
         }

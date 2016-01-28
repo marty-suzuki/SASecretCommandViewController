@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SASecretCommandViewController
+import MSAlertController
 
 class ViewController: SASecretCommandViewController {
     

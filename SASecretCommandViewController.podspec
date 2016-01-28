@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SASecretCommandViewController"
-  s.version          = "1.2.0"
+  s.version          = "1.3.0"
   s.summary          = "You can use secret command with swipe gesture and A, B button. Show a secret mode you want!"
   s.homepage         = "https://github.com/szk-atmosphere/SASecretCommandViewController"
   s.license          = 'MIT'

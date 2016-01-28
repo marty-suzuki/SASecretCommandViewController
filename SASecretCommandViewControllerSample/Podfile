@@ -1,2 +1,4 @@
 platform :ios, "8.0"
 pod 'MSAlertController'
+pod 'SASecretCommandViewController', :path => '../'
+use_frameworks!

@@ -8,7 +8,6 @@
 
 import UIKit
 import SASecretCommandViewController
-import MSAlertController
 
 class ViewController: SASecretCommandViewController {
     
@@ -37,34 +36,19 @@ class ViewController: SASecretCommandViewController {
         imageView.frame = view.bounds
         imageView.image = UIImage(named: "normal")
         view.addSubview(imageView)
+        
+        didPassSecretCommandHandler = { [weak self] in
+            let controller = UIAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Default) { _ in
+                self?.imageView.image = UIImage(named: "secret")
+            }
+            controller.addAction(action)
+            self?.presentViewController(controller, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func secretCommandPassed() {
-        super.secretCommandPassed()
-        
-        let font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 16.0)
-        let redColor = UIColor.redColor()
-        
-        let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
-        controller.alertBackgroundColor = .blackColor()
-        controller.titleColor = redColor
-        controller.separatorColor = redColor
-        controller.messageColor = redColor
-        controller.titleFont = font
-        controller.messageFont = font
-        let action = MSAlertAction(title: "OK", style: .Default) { (action) in
-            self.imageView.image = UIImage(named: "secret")
-        }
-        action.titleColor = redColor
-        action.highlightedColor = .grayColor()
-        action.font = font
-        controller.addAction(action)
-        presentViewController(controller, animated: true, completion: nil)
-    }
 }
-

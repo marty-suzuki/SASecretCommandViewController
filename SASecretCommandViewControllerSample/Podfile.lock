@@ -1,6 +1,6 @@
 PODS:
   - MSAlertController (1.0.2)
-  - SASecretCommandViewController (1.2.0)
+  - SASecretCommandViewController (1.4.0)
 
 DEPENDENCIES:
   - MSAlertController
@@ -12,6 +12,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   MSAlertController: 502577669b8fef56c492c943cb0d5ae94392369d
-  SASecretCommandViewController: 64aadcc59b3e2668ea550cdea189e0579305c900
+  SASecretCommandViewController: 1e9a0dbc51acfe63c2774634dd9f8e852f263f1b
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: e2c09a05656e950f9645f611dea73b9b44d22a02
+
+COCOAPODS: 1.1.0.rc.2

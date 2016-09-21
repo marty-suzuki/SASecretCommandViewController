@@ -9,13 +9,13 @@
 
 Pod::Spec.new do |s|
   s.name             = "SASecretCommandViewController"
-  s.version          = "1.3.0"
+  s.version          = "1.4.0"
   s.summary          = "You can use secret command with swipe gesture and A, B button. Show a secret mode you want!"
-  s.homepage         = "https://github.com/szk-atmosphere/SASecretCommandViewController"
+  s.homepage         = "https://github.com/marty-suzuki/SASecretCommandViewController"
   s.license          = 'MIT'
   s.author           = { "Taiki Suzuki" => "s1180183@gmail.com" }
-  s.source           = { :git => "https://github.com/szk-atmosphere/SASecretCommandViewController.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/SzkAtmosphere'
+  s.source           = { :git => "https://github.com/marty-suzuki/SASecretCommandViewController.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/marty_suzuki'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true

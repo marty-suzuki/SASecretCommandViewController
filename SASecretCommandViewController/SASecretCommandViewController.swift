@@ -15,12 +15,10 @@ public class SASecretCommandViewController: UIViewController {
     private var buttonView: SASecreatCommandButtonView?
     private var keyView: SASecretCommandKeyView?
     
-    public var showInputCommand = false
+    public var showInputCommand = false    
+    private var gestures: [UISwipeGestureRecognizer]?
     
-    private var upGesture: UISwipeGestureRecognizer?
-    private var downGesture: UISwipeGestureRecognizer?
-    private var leftGesture: UISwipeGestureRecognizer?
-    private var rightGesture: UISwipeGestureRecognizer?
+    public var didPassSecretCommandHandler: (() -> ())?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,43 +34,16 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     private func addGesture() {
-        let upGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
-        upGesture.direction = .Up
-        view.addGestureRecognizer(upGesture)
-        self.upGesture = upGesture
-        
-        let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
-        downGesture.direction = .Down
-        view.addGestureRecognizer(downGesture)
-        self.downGesture = downGesture
-        
-        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
-        rightGesture.direction = .Right
-        view.addGestureRecognizer(rightGesture)
-        self.rightGesture = rightGesture
-        
-        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
-        leftGesture.direction = .Left
-        view.addGestureRecognizer(leftGesture)
-        self.leftGesture = leftGesture
+        gestures = [.Up, .Down, .Right, .Left].map { (dicrection: UISwipeGestureRecognizerDirection) -> UISwipeGestureRecognizer in
+            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
+            gesture.direction = dicrection
+            view.addGestureRecognizer(gesture)
+            return gesture
+        }
     }
     
     private func removeGesture() {
-        if let upGesture = upGesture {
-            view.removeGestureRecognizer(upGesture)
-        }
-        
-        if let downGesture = downGesture {
-            view.removeGestureRecognizer(downGesture)
-        }
-        
-        if let leftGesture = leftGesture {
-            view.removeGestureRecognizer(leftGesture)
-        }
-        
-        if let rightGesture = rightGesture {
-            view.removeGestureRecognizer(rightGesture)
-        }
+        gestures?.forEach { view.removeGestureRecognizer($0) }
     }
     
     private func createButtonView() -> SASecreatCommandButtonView {
@@ -82,12 +53,10 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     private func removeButtonView() -> Bool {
-        if let buttonView = buttonView {
-            buttonView.removeFromSuperview()
-            addGesture()
-            return true
-        }
-        return false
+        guard let buttonView = buttonView else { return false }
+        buttonView.removeFromSuperview()
+        addGesture()
+        return true
     }
     
 //    private func showButtonView() {
@@ -134,52 +103,44 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     private func showKeyView(command: SASecretCommandType) {
-        if showInputCommand {
-            self.keyView?.removeFromSuperview()
-            
-            let keyView = createKeyView(command)
-            keyView.alpha = 0.0
-            view.addSubview(keyView)
-            self.keyView = keyView
+        guard showInputCommand else { return }
+        self.keyView?.removeFromSuperview()
+        
+        let keyView = createKeyView(command)
+        keyView.alpha = 0.0
+        view.addSubview(keyView)
+        self.keyView = keyView
+        UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
+            keyView.alpha = 1.0
+        }, completion: { (finished) in
             UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
-                keyView.alpha = 1.0
+                keyView.alpha = 0.0
             }, completion: { (finished) in
-                UIView.animateWithDuration(0.1, delay: 0.0, options: .CurveEaseIn, animations: {
-                    keyView.alpha = 0.0
-                }, completion: { (finished) in
-                    self.removeKeyView()
-                })
+                self.removeKeyView()
             })
-        }
+        })
     }
     
     func detectSwipeGesture(gesture: UISwipeGestureRecognizer) {
-        guard let crossKeyCommand = SASecretCommandType.convert(gesture.direction) else {
-            return
-        }
+        guard let crossKeyCommand = SASecretCommandType(direction: gesture.direction) else { return }
         commandManager.checkCommand(crossKeyCommand)
         showKeyView(crossKeyCommand)
     }
     
     public func registerSecretCommand(commandList: [SASecretCommandType]) {
-        if commandList.count > 0 {
-            if let command = commandList.first {
-                switch command {
-                    case .A, .B:
-                        let buttonView = createButtonView()
-                        removeGesture()
-                        view.addSubview(buttonView)
-                        self.buttonView = buttonView
-                    case .Up, .Down, .Left, .Right:
-                        break
-                }
+        if let command = commandList.first {
+            switch command {
+            case .A, .B:
+                let buttonView = createButtonView()
+                removeGesture()
+                view.addSubview(buttonView)
+                self.buttonView = buttonView
+            case .Up, .Down, .Left, .Right:
+                break
             }
         }
-        
         commandManager.secretCommandList = commandList
     }
-    
-    public func secretCommandPassed() {}
 }
 
 extension SASecretCommandViewController: SASecretCommandManagerDelegate {
@@ -189,9 +150,8 @@ extension SASecretCommandViewController: SASecretCommandManagerDelegate {
         }
         
         removeGesture()
-        if let buttonView = buttonView {
-            view.addSubview(buttonView)
-        }
+        guard let buttonView = buttonView else { return }
+        view.addSubview(buttonView)
     }
     
     func secretCommandManagerCloseButtonView(manager: SASecretCommandManager) {
@@ -200,7 +160,7 @@ extension SASecretCommandViewController: SASecretCommandManagerDelegate {
     
     func secretCommandManagerSecretCommandPassed(manager: SASecretCommandManager) {
         removeButtonView()
-        secretCommandPassed()
+        didPassSecretCommandHandler?()
     }
 }
 

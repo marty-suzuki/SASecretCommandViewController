@@ -11,7 +11,15 @@ import QuartzCore
 
 class SASecreatCommandButtonView: UIView {
     
-    private var buttonContainerView: UIView?
+    private lazy var buttonContainerView: UIView = {
+        let buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+        buttonContainerView.center = CGPoint(x: self.frame.size.width / 2.0, y: self.frame.size.height / 2.0)
+        buttonContainerView.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
+        buttonContainerView.layer.cornerRadius = 10.0
+        self.addSubview(buttonContainerView)
+        return buttonContainerView
+    }()
+    
     weak var delegate: SASecreatCommandButtonViewDelegate?
     
     override init(frame: CGRect) {
@@ -20,19 +28,12 @@ class SASecreatCommandButtonView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+        super.init(coder: aDecoder)
         initialize()
     }
     
     private func initialize() {
         backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4)
-        
-        let buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        buttonContainerView.center = CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0)
-        buttonContainerView.backgroundColor = UIColor(red: 140.0 / 255.0, green: 45.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
-        buttonContainerView.layer.cornerRadius = 10.0
-        addSubview(buttonContainerView)
-        self.buttonContainerView = buttonContainerView
         
         let colorView = UIView(frame: CGRect(x: 10.0, y: 10.0, width: 180, height: 80))
         colorView.backgroundColor = UIColor(red: 225.0 / 255.0, green: 215.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
@@ -103,34 +104,28 @@ class SASecretCommandKeyView: UIView {
     
     var commandType: SASecretCommandType? {
         didSet {
-            guard let commandType = commandType else {
-                return
-            }
+            guard let commandType = commandType else { return }
+            
+            let transform: CATransform3D
             switch commandType {
-                case .A, .B:
-                    let commandLabel = createCommandLabel(commandType.rawValue)
-                    addSubview(commandLabel)
-                    self.commandLabel = commandLabel
-                case .Up:
-                    let arrow = createArrowView()
-                    addSubview(arrow)
-                    self.arrow = arrow
-                case .Down:
-                    let arrow = createArrowView()
-                    arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
-                    addSubview(arrow)
-                    self.arrow = arrow
-                case .Left:
-                    let arrow = createArrowView()
-                    arrow.layer.transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                    addSubview(arrow)
-                    self.arrow = arrow
-                case .Right:
-                    let arrow = createArrowView()
-                    arrow.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-                    addSubview(arrow)
-                    self.arrow = arrow
+            case .A, .B:
+                let commandLabel = createCommandLabel(commandType.rawValue)
+                addSubview(commandLabel)
+                self.commandLabel = commandLabel
+                return
+            case .Up:
+                transform = CATransform3DIdentity
+            case .Down:
+                transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
+            case .Left:
+                transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
+            case .Right:
+                transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
             }
+            let arrow = createArrowView()
+            arrow.layer.transform = transform
+            addSubview(arrow)
+            self.arrow = arrow
         }
     }
     
@@ -177,7 +172,7 @@ private class SASecretCommandArrowView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
+        super.init(coder: aDecoder)
         backgroundColor = .clearColor()
     }
     
@@ -189,21 +184,21 @@ private class SASecretCommandArrowView: UIView {
         let midY = CGRectGetMidY(rect)
         let maxY = CGRectGetMaxY(rect);
         
-        let context = UIGraphicsGetCurrentContext()
-        CGContextSetStrokeColorWithColor(context!, UIColor.whiteColor().CGColor)
-        CGContextSetRGBFillColor(context!, 1.0, 1.0, 1.0, 1.0)
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+        CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0)
         
-        CGContextMoveToPoint(context!, midX, minY)
-        CGContextAddLineToPoint(context!, maxX, midY)
-        CGContextAddLineToPoint(context!, maxX - 20, midY)
-        CGContextAddLineToPoint(context!, maxX - 20, maxY)
-        CGContextAddLineToPoint(context!, minX + 20, maxY)
-        CGContextAddLineToPoint(context!, minX + 20, midY)
-        CGContextAddLineToPoint(context!, minX, midY)
-        CGContextAddLineToPoint(context!, midX, minY)
+        CGContextMoveToPoint(context, midX, minY)
+        CGContextAddLineToPoint(context, maxX, midY)
+        CGContextAddLineToPoint(context, maxX - 20, midY)
+        CGContextAddLineToPoint(context, maxX - 20, maxY)
+        CGContextAddLineToPoint(context, minX + 20, maxY)
+        CGContextAddLineToPoint(context, minX + 20, midY)
+        CGContextAddLineToPoint(context, minX, midY)
+        CGContextAddLineToPoint(context, midX, minY)
         
-        CGContextClosePath(context!)
+        CGContextClosePath(context)
     
-        CGContextDrawPath(context!, CGPathDrawingMode.FillStroke);
+        CGContextDrawPath(context, .FillStroke);
     }
 }

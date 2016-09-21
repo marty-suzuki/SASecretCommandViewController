@@ -36,22 +36,22 @@ public class SASecretCommandViewController: UIViewController {
     }
     
     private func addGesture() {
-        let upGesture = UISwipeGestureRecognizer(target: self, action: "detectSwipeGesture:")
+        let upGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
         upGesture.direction = .Up
         view.addGestureRecognizer(upGesture)
         self.upGesture = upGesture
         
-        let downGesture = UISwipeGestureRecognizer(target: self, action: "detectSwipeGesture:")
+        let downGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
         downGesture.direction = .Down
         view.addGestureRecognizer(downGesture)
         self.downGesture = downGesture
         
-        let rightGesture = UISwipeGestureRecognizer(target: self, action: "detectSwipeGesture:")
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
         rightGesture.direction = .Right
         view.addGestureRecognizer(rightGesture)
         self.rightGesture = rightGesture
         
-        let leftGesture = UISwipeGestureRecognizer(target: self, action: "detectSwipeGesture:")
+        let leftGesture = UISwipeGestureRecognizer(target: self, action: #selector(SASecretCommandViewController.detectSwipeGesture(_:)))
         leftGesture.direction = .Left
         view.addGestureRecognizer(leftGesture)
         self.leftGesture = leftGesture

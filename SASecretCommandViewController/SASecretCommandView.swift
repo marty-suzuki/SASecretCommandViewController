@@ -61,7 +61,7 @@ class SASecreatCommandButtonView: UIView {
         aButton.setTitle("A", forState: .Normal)
         aButton.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
         aButton.setTitleColor(UIColor.redColor(), forState: .Highlighted)
-        aButton.addTarget(self, action: "aButtonTapped:", forControlEvents: .TouchUpInside)
+        aButton.addTarget(self, action: #selector(SASecreatCommandButtonView.aButtonTapped(_:)), forControlEvents: .TouchUpInside)
         aButtonContainer.addSubview(aButton)
         
         let bButtonContainer = UIView(frame: CGRect(x: buttonContainerView.frame.size.width - 80, y:20, width: 60, height: 60))
@@ -78,7 +78,7 @@ class SASecreatCommandButtonView: UIView {
         bButton.setTitle("B", forState: .Normal)
         bButton.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
         bButton.setTitleColor(UIColor.redColor(), forState: .Highlighted)
-        bButton.addTarget(self, action: "bButtonTapped:", forControlEvents: .TouchUpInside)
+        bButton.addTarget(self, action: #selector(SASecreatCommandButtonView.bButtonTapped(_:)), forControlEvents: .TouchUpInside)
         bButtonContainer.addSubview(bButton)
     }
     
@@ -190,20 +190,20 @@ private class SASecretCommandArrowView: UIView {
         let maxY = CGRectGetMaxY(rect);
         
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
-        CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0)
+        CGContextSetStrokeColorWithColor(context!, UIColor.whiteColor().CGColor)
+        CGContextSetRGBFillColor(context!, 1.0, 1.0, 1.0, 1.0)
         
-        CGContextMoveToPoint(context, midX, minY)
-        CGContextAddLineToPoint(context, maxX, midY)
-        CGContextAddLineToPoint(context, maxX - 20, midY)
-        CGContextAddLineToPoint(context, maxX - 20, maxY)
-        CGContextAddLineToPoint(context, minX + 20, maxY)
-        CGContextAddLineToPoint(context, minX + 20, midY)
-        CGContextAddLineToPoint(context, minX, midY)
-        CGContextAddLineToPoint(context, midX, minY)
+        CGContextMoveToPoint(context!, midX, minY)
+        CGContextAddLineToPoint(context!, maxX, midY)
+        CGContextAddLineToPoint(context!, maxX - 20, midY)
+        CGContextAddLineToPoint(context!, maxX - 20, maxY)
+        CGContextAddLineToPoint(context!, minX + 20, maxY)
+        CGContextAddLineToPoint(context!, minX + 20, midY)
+        CGContextAddLineToPoint(context!, minX, midY)
+        CGContextAddLineToPoint(context!, midX, minY)
         
-        CGContextClosePath(context)
+        CGContextClosePath(context!)
     
-        CGContextDrawPath(context, CGPathDrawingMode.FillStroke);
+        CGContextDrawPath(context!, CGPathDrawingMode.FillStroke);
     }
 }

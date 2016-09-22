@@ -18,16 +18,16 @@ class ViewController: SASecretCommandViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let commandList: [SASecretCommandType] = [
-            .Up,
-            .Up,
-            .Down,
-            .Down,
-            .Left,
-            .Right,
-            .Left,
-            .Right,
-            .B,
-            .A
+            .up,
+            .up,
+            .down,
+            .down,
+            .left,
+            .right,
+            .left,
+            .right,
+            .b,
+            .a
         ]
         
         registerSecretCommand(commandList)

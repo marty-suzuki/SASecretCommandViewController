@@ -10,6 +10,10 @@ import UIKit
 import QuartzCore
 
 class SASecreatCommandButtonView: UIView {
+    private struct Const {
+        static let aButtonTag: Int = 10001
+        static let bButtonTag: Int = 10002
+    }
     
     private lazy var buttonContainerView: UIView = {
         let buttonContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
@@ -62,7 +66,8 @@ class SASecreatCommandButtonView: UIView {
         aButton.setTitle("A", forState: .Normal)
         aButton.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
         aButton.setTitleColor(UIColor.redColor(), forState: .Highlighted)
-        aButton.addTarget(self, action: #selector(SASecreatCommandButtonView.aButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        aButton.tag = Const.aButtonTag
+        aButton.addTarget(self, action: #selector(SASecreatCommandButtonView.buttonTapped(_:)), forControlEvents: .TouchUpInside)
         aButtonContainer.addSubview(aButton)
         
         let bButtonContainer = UIView(frame: CGRect(x: buttonContainerView.frame.size.width - 80, y:20, width: 60, height: 60))
@@ -79,22 +84,25 @@ class SASecreatCommandButtonView: UIView {
         bButton.setTitle("B", forState: .Normal)
         bButton.titleLabel?.font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 30)
         bButton.setTitleColor(UIColor.redColor(), forState: .Highlighted)
-        bButton.addTarget(self, action: #selector(SASecreatCommandButtonView.bButtonTapped(_:)), forControlEvents: .TouchUpInside)
+        bButton.tag = Const.bButtonTag
+        bButton.addTarget(self, action: #selector(SASecreatCommandButtonView.buttonTapped(_:)), forControlEvents: .TouchUpInside)
         bButtonContainer.addSubview(bButton)
     }
     
-    func aButtonTapped(sender: AnyObject) {
-        delegate?.secretCommandButtonViewAButtonTapped(self)
-    }
-    
-    func bButtonTapped(sender: AnyObject) {
-        delegate?.secretCommandButtonViewBButtonTapped(self)
+    func buttonTapped(sender: UIButton) {
+        switch sender.tag {
+        case Const.aButtonTag:
+            delegate?.secretCommandButtonView(self, didTap: .a)
+        case Const.bButtonTag:
+            delegate?.secretCommandButtonView(self, didTap: .b)
+        default:
+            return
+        }
     }
 }
 
 protocol SASecreatCommandButtonViewDelegate: class {
-    func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView)
-    func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView)
+    func secretCommandButtonView(buttonView: SASecreatCommandButtonView, didTap type: SASecretCommandType)
 }
 
 class SASecretCommandKeyView: UIView {
@@ -108,18 +116,18 @@ class SASecretCommandKeyView: UIView {
             
             let transform: CATransform3D
             switch commandType {
-            case .A, .B:
+            case .a, .b:
                 let commandLabel = createCommandLabel(commandType.rawValue)
                 addSubview(commandLabel)
                 self.commandLabel = commandLabel
                 return
-            case .Up:
+            case .up:
                 transform = CATransform3DIdentity
-            case .Down:
+            case .down:
                 transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
-            case .Left:
+            case .left:
                 transform = CATransform3DMakeRotation(-CGFloat(M_PI_2), 0.0, 0.0, 1.0)
-            case .Right:
+            case .right:
                 transform = CATransform3DMakeRotation(CGFloat(M_PI_2), 0.0, 0.0, 1.0)
             }
             let arrow = createArrowView()

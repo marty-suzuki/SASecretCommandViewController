@@ -9,25 +9,25 @@
 import UIKit
 
 public enum SASecretCommandType: String {
-    case Up = "Up"
-    case Down = "Down"
-    case Left = "Left"
-    case Right = "Right"
-    case A = "A"
-    case B = "B"
+    case up = "Up"
+    case down = "Down"
+    case left = "Left"
+    case right = "Right"
+    case a = "A"
+    case b = "B"
     
     init?(direction: UISwipeGestureRecognizerDirection) {
         if direction.contains(.Right) {
-            self = .Right
+            self = .right
             return
         } else if direction.contains(.Left) {
-            self = .Left
+            self = .left
             return
         } else if direction.contains(.Down) {
-            self = .Down
+            self = .down
             return
         } else if direction.contains(.Up) {
-            self = .Up
+            self = .up
             return
         }
         return nil
@@ -61,9 +61,9 @@ class SASecretCommandManager: NSObject {
             
             if let nextCommand = secretCommandList.next(index) {
                 switch nextCommand {
-                case .A, .B:
+                case .a, .b:
                     delegate?.secretCommandManagerShowButtonView(self)
-                case .Up, .Down, .Left, .Right:
+                case .up, .down, .left, .right:
                     delegate?.secretCommandManagerCloseButtonView(self)
                 }
             }
@@ -79,9 +79,9 @@ class SASecretCommandManager: NSObject {
                 
                 if let nextCommand = secretCommandList.next(0) {
                     switch nextCommand {
-                    case .A, .B:
+                    case .a, .b:
                         delegate?.secretCommandManagerShowButtonView(self)
-                    case .Up, .Down, .Left, .Right:
+                    case .up, .down, .left, .right:
                         delegate?.secretCommandManagerCloseButtonView(self)
                     }
                 }

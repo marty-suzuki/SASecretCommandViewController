@@ -130,12 +130,12 @@ public class SASecretCommandViewController: UIViewController {
     public func registerSecretCommand(commandList: [SASecretCommandType]) {
         if let command = commandList.first {
             switch command {
-            case .A, .B:
+            case .a, .b:
                 let buttonView = createButtonView()
                 removeGesture()
                 view.addSubview(buttonView)
                 self.buttonView = buttonView
-            case .Up, .Down, .Left, .Right:
+            case .up, .down, .left, .right:
                 break
             }
         }
@@ -165,15 +165,8 @@ extension SASecretCommandViewController: SASecretCommandManagerDelegate {
 }
 
 extension SASecretCommandViewController: SASecreatCommandButtonViewDelegate {
-    func secretCommandButtonViewAButtonTapped(buttonView: SASecreatCommandButtonView) {
-        commandManager.checkCommand(.A)
-        
-        showKeyView(.A)
-    }
-    
-    func secretCommandButtonViewBButtonTapped(buttonView: SASecreatCommandButtonView) {
-        commandManager.checkCommand(.B)
-        
-        showKeyView(.B)
+    func secretCommandButtonView(buttonView: SASecreatCommandButtonView, didTap type: SASecretCommandType) {
+        commandManager.checkCommand(type)
+        showKeyView(type)
     }
 }

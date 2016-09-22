@@ -15,6 +15,7 @@
 - [x] Secret command register
 - [x] Unlock with secret command
 - [x] Show input command with animation
+- [x] Support Swift2.3
 
 ## Installation
 
@@ -27,7 +28,7 @@ it, simply add the following line to your Podfile:
 
 #### Manually
 
-Add the [SASecretCommandViewController](./SASecretCommandViewController) directory to your project. 
+Add the [SASecretCommandViewController](./SASecretCommandViewController) directory to your project.
 
 ## Usage
 
@@ -42,22 +43,22 @@ class ViewController: SASecretCommandViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // Register secret command with SASecretCommandType
         let commandList: [SASecretCommandType] = [
-            .Up,
-            .Up,
-            .Down,
-            .Down,
-            .Left,
-            .Right,
-            .Left,
-            .Right,
-            .B,
-            .A
+            .up,
+            .up,
+            .down,
+            .down,
+            .left,
+            .right,
+            .left,
+            .right,
+            .b,
+            .a
         ]
         self.registerSecretCommand(commandList)
-        
+
         //Show inpunt command as icon
         self.showInputCommand = true
     }
@@ -68,50 +69,33 @@ class ViewController: SASecretCommandViewController {
 if substitute `true` for `public var showInputCommand`, shown input command on view. On the other hand, if substitute `false`, hidden input command.
 
 Allowed input command is below.
+
 ```swift
 public enum SASecretCommandType {
-    case Up, Down, Left, Right, A, B
+    case Uu, down, left, right, a, b
 }
 ```
-if passed the secret command, called `public func secretCommandPassed()`. Please override that method and write code you want.
+
+if passed the secret command, called `public var didPassSecretCommandHandler: (() -> ())?`.
 
 For example, showing custom alert.
+
 ```swift
-override func secretCommandPassed() {
-    super.secretCommandPassed()
-    
-    let font = UIFont(name: "HelveticaNeue-CondensedBlack", size: 16.0)
-    let redColor = UIColor.redColor()
-    
-    let controller = MSAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
-    controller.alertBackgroundColor = .blackColor()
-    controller.titleColor = redColor
-    controller.separatorColor = redColor
-    controller.messageColor = redColor
-    controller.titleFont = font
-    controller.messageFont = font
-    let action = MSAlertAction(title: "OK", style: .Default) { (action) in
-        self.imageView.image = UIImage(named: "secret")
+didPassSecretCommandHandler = { [weak self] in
+    let controller = UIAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
+    let action = UIAlertAction(title: "OK", style: .Default) { _ in
+        self?.imageView.image = UIImage(named: "secret")
     }
-    action.titleColor = redColor
-    action.highlightedColor = .grayColor()
-    action.font = font
     controller.addAction(action)
-    self.presentViewController(controller, animated: true, completion: nil)
+    self?.presentViewController(controller, animated: true, completion: nil)
 }
 ```
 
 ## Requirements
 
-- Xcode 6.3 or greater
-- iOS7.0(manually only) or greater
-- ARC
+- Xcode 8 or greater
+- iOS 8 or greater
 - QuartzCore.framework
-
-## Other
-
-A sample of this project uses "[MSAlertController
-](https://github.com/szk-atmosphere/MSAlertController)" as custom UIAlertController.
 
 ## Author
 
@@ -120,4 +104,3 @@ Taiki Suzuki, s1180183@gmail.com
 ## License
 
 SASecretCommandViewController is available under the MIT license. See the LICENSE file for more info.
-

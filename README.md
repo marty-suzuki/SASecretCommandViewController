@@ -73,7 +73,7 @@ Allowed input command is below.
 
 ```swift
 public enum SASecretCommandType {
-    case Uu, down, left, right, a, b
+    case up, down, left, right, a, b
 }
 ```
 

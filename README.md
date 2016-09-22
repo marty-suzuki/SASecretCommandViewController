@@ -16,6 +16,7 @@
 - [x] Unlock with secret command
 - [x] Show input command with animation
 - [x] Support Swift2.3
+- [x] Support Swift3
 
 ## Installation
 

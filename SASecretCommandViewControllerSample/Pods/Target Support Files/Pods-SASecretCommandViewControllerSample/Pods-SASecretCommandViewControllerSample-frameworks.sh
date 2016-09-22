@@ -84,10 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/MSAlertController/MSAlertController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SASecretCommandViewController/SASecretCommandViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/MSAlertController/MSAlertController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SASecretCommandViewController/SASecretCommandViewController.framework"
 fi

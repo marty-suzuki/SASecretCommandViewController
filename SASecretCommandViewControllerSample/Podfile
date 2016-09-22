@@ -4,6 +4,5 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'SASecretCommandViewControllerSample' do
-pod 'MSAlertController'
 pod 'SASecretCommandViewController', :path => '../'
 end

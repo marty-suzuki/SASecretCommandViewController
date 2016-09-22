@@ -38,12 +38,12 @@ class ViewController: SASecretCommandViewController {
         view.addSubview(imageView)
         
         didPassSecretCommandHandler = { [weak self] in
-            let controller = UIAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "OK", style: .Default) { _ in
+            let controller = UIAlertController(title: "Command Passed", message: "This is secret mode!!", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default) { _ in
                 self?.imageView.image = UIImage(named: "secret")
             }
             controller.addAction(action)
-            self?.presentViewController(controller, animated: true, completion: nil)
+            self?.present(controller, animated: true, completion: nil)
         }
     }
 

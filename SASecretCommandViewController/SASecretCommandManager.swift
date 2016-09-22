@@ -17,16 +17,16 @@ public enum SASecretCommandType: String {
     case b = "B"
     
     init?(direction: UISwipeGestureRecognizerDirection) {
-        if direction.contains(.Right) {
+        if direction.contains(.right) {
             self = .right
             return
-        } else if direction.contains(.Left) {
+        } else if direction.contains(.left) {
             self = .left
             return
-        } else if direction.contains(.Down) {
+        } else if direction.contains(.down) {
             self = .down
             return
-        } else if direction.contains(.Up) {
+        } else if direction.contains(.up) {
             self = .up
             return
         }
@@ -35,23 +35,23 @@ public enum SASecretCommandType: String {
 }
 
 protocol SASecretCommandManagerDelegate: class {
-    func secretCommandManagerShowButtonView(manager: SASecretCommandManager)
-    func secretCommandManagerCloseButtonView(manager: SASecretCommandManager)
-    func secretCommandManagerSecretCommandPassed(manager: SASecretCommandManager)
+    func secretCommandManagerShowButtonView(_ manager: SASecretCommandManager)
+    func secretCommandManagerCloseButtonView(_ manager: SASecretCommandManager)
+    func secretCommandManagerSecretCommandPassed(_ manager: SASecretCommandManager)
 }
 
 class SASecretCommandManager: NSObject {
     
-    private var commandStack: [SASecretCommandType] = []
+    fileprivate var commandStack: [SASecretCommandType] = []
     var secretCommandList: [SASecretCommandType]?
     weak var delegate: SASecretCommandManagerDelegate?
 
-    func checkCommand(command: SASecretCommandType) {
+    func checkCommand(_ command: SASecretCommandType) {
         let index = commandStack.count
         
         guard let secretCommandList = secretCommandList else { return }
         if index > secretCommandList.count - 1 {
-            commandStack.removeAll(keepCapacity: false)
+            commandStack.removeAll(keepingCapacity: false)
             return
         }
         
@@ -69,7 +69,7 @@ class SASecretCommandManager: NSObject {
             }
         } else {
             if index > 0 {
-                commandStack.removeAll(keepCapacity: false)
+                commandStack.removeAll(keepingCapacity: false)
                 
                 if let secretCommand = secretCommandList.first {
                     if secretCommand == command {
@@ -92,20 +92,20 @@ class SASecretCommandManager: NSObject {
 
         guard commandStack.count == secretCommandList.count else { return }
         
-        let filtedCommandList = secretCommandList.enumerate().filter { $0.element != secretCommandList[$0.index] }
+        let filtedCommandList = secretCommandList.enumerated().filter { $0.element != secretCommandList[$0.offset] }
         if filtedCommandList.count > 0 { return }
             
         delegate?.secretCommandManagerSecretCommandPassed(self)
-        commandStack.removeAll(keepCapacity: false)
+        commandStack.removeAll(keepingCapacity: false)
     }
 }
 
 private extension Array {
-    private func hasNext(index: Int) -> Bool {
+    func hasNext(_ index: Int) -> Bool {
         return count > index + 1
     }
     
-    func next(index: Int) -> Element? {
+    func next(_ index: Int) -> Element? {
         guard hasNext(index) else { return nil }
         return self[index + 1]
     }

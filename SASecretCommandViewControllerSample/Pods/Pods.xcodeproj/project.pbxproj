@@ -7,108 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		092638F5A425509CE27D531E7BADFECD /* MSAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE6A63248F82E34F728738A230F2A0D /* MSAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A685A53B9E2A31035ACD2800A1C41AC /* SASecretCommandViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEC54A9FE3A77BAA11F8D7E9902773D /* SASecretCommandViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		124A53B86F6F25DF599924FF335F795F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
-		3121497B5E4EC51B7FAE4CE811E69587 /* SASecretCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6465650B8BE44BD93AEAB951152165 /* SASecretCommandView.swift */; };
-		4037E359AD08E62512821E40CF78228B /* MSAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = D2BB8E51133BC4927D5BFAB8C7F1B048 /* MSAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		466C2D2119876739796388A9CD20E007 /* SASecretCommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A03EE77B239914792AF673717A6E19 /* SASecretCommandManager.swift */; };
-		6ED544254099BB1BD10C9FAFDD173480 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */; };
-		76D5F8F3A7DBEC0C061A146D464735F9 /* MSAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 474E30E64EAF7B4A533B24183E26F661 /* MSAlertController.xib */; };
-		7D86D80AA8943B1F72BEA842B9A53F6B /* MSAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F34C7739EAE30DDE74BD24224B781A /* MSAlertController.m */; };
-		7D8C9E974AE1ECDEDA6939211649F863 /* MSAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B868187D4B6AF5A7F309CC76F82F7EF9 /* MSAlertController-dummy.m */; };
-		853461090C0EAEF53DC2A8408CB231B3 /* SASecretCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8393F11991EC52CA3694469FC2486D6 /* SASecretCommandViewController.swift */; };
-		8CA5E6B602910F8FB2BE2211316F414C /* MSAlertController_ActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1388D7E3544788EF70765FBD636C3ED4 /* MSAlertController_ActionSheet.xib */; };
-		9851D7EB9BE6FAF819BD9EB5E0C4EB32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		98B0C71760E6947DDED78AF5812ABA8B /* Pods-SASecretCommandViewControllerSample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4BAD6FCFC93F2CCCBD53D9BF29E282F /* Pods-SASecretCommandViewControllerSample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C766BEE95AC52934988543C6C89D1145 /* SASecretCommandViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B25C431D8D2812728F3311ACD563EAD /* SASecretCommandViewController-dummy.m */; };
-		C89B180FCAEBAA46D71DCBCD3497C38F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
-		D786AC4EDC583E7ED9EB335AD75261DA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */; };
-		DFA01613C1758A5A3984A1EFBC01A341 /* Pods-SASecretCommandViewControllerSample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA20C44CBE00BF0474DFA574D01E0C /* Pods-SASecretCommandViewControllerSample-dummy.m */; };
-		EA281C70F890B5D4B5C03640E68C1F3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */; };
+		197BE95CFAC56AA63573ADA410AD066A /* SASecretCommandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8393F11991EC52CA3694469FC2486D6 /* SASecretCommandViewController.swift */; };
+		38FA35923814C6EA672CD3CF2E2FFF8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
+		3AE4CE05670373BFFFA8EE55218E1435 /* Pods-SASecretCommandViewControllerSample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EA20C44CBE00BF0474DFA574D01E0C /* Pods-SASecretCommandViewControllerSample-dummy.m */; };
+		67ABA7F9110DF2BAD7DBD54691E17813 /* SASecretCommandManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A03EE77B239914792AF673717A6E19 /* SASecretCommandManager.swift */; };
+		9675981B4BCCCFE97A9A5F63F180DC42 /* SASecretCommandViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BEC54A9FE3A77BAA11F8D7E9902773D /* SASecretCommandViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFB626AFA4538D67C705ED9067120A18 /* Pods-SASecretCommandViewControllerSample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4BAD6FCFC93F2CCCBD53D9BF29E282F /* Pods-SASecretCommandViewControllerSample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC9C66B081C394DDB103BAC480813C01 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */; };
+		CC4E0DEA56A87E014DC9A3CDB80FE6E3 /* SASecretCommandViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B25C431D8D2812728F3311ACD563EAD /* SASecretCommandViewController-dummy.m */; };
+		E08296938E86C860B26F486DA25BC666 /* SASecretCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6465650B8BE44BD93AEAB951152165 /* SASecretCommandView.swift */; };
+		ECB020C6B353C6B6A04A2F4A1711F037 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8D2A478D1DD8DBB2578307A83630C894 /* PBXContainerItemProxy */ = {
+		47EAB7CA726085924ACEC823E72C86BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F963E59DB81A841AA8DA30DAF570EF2;
+			remoteGlobalIDString = AF8C6C03B5AEE2ABED343771B252C0E1;
 			remoteInfo = SASecretCommandViewController;
-		};
-		B868DF0E1CBAB59366695ACDA5B4B584 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 20061A5681DF35957A00C8B50D120BC0;
-			remoteInfo = MSAlertController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03504FA827F114051D5A9DB5CBFF89D5 /* MSAlertController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MSAlertController.xcconfig; sourceTree = "<group>"; };
-		091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		0BEC54A9FE3A77BAA11F8D7E9902773D /* SASecretCommandViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SASecretCommandViewController-umbrella.h"; sourceTree = "<group>"; };
 		0C7600F779FB8CF272517B61D6D8C40E /* Pods-SASecretCommandViewControllerSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SASecretCommandViewControllerSample.release.xcconfig"; sourceTree = "<group>"; };
-		10F34C7739EAE30DDE74BD24224B781A /* MSAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSAlertController.m; path = MSAlertController/MSAlertController.m; sourceTree = "<group>"; };
-		1388D7E3544788EF70765FBD636C3ED4 /* MSAlertController_ActionSheet.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MSAlertController_ActionSheet.xib; path = MSAlertController/MSAlertController_ActionSheet.xib; sourceTree = "<group>"; };
 		178D598ACE61DB6977145014555CCCB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B25C431D8D2812728F3311ACD563EAD /* SASecretCommandViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SASecretCommandViewController-dummy.m"; sourceTree = "<group>"; };
-		23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		32A03EE77B239914792AF673717A6E19 /* SASecretCommandManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SASecretCommandManager.swift; sourceTree = "<group>"; };
 		3327AC68B155DF31979D490012D009C3 /* Pods-SASecretCommandViewControllerSample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SASecretCommandViewControllerSample.modulemap"; sourceTree = "<group>"; };
 		3B5166F43FF0A589EDF0E893D38C7148 /* SASecretCommandViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SASecretCommandViewController-prefix.pch"; sourceTree = "<group>"; };
 		42323B7304B68715B28BCC10A372DAE1 /* Pods-SASecretCommandViewControllerSample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SASecretCommandViewControllerSample-acknowledgements.plist"; sourceTree = "<group>"; };
-		474E30E64EAF7B4A533B24183E26F661 /* MSAlertController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = MSAlertController.xib; path = MSAlertController/MSAlertController.xib; sourceTree = "<group>"; };
-		49E22AFD540A427824A70261C2A40245 /* MSAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MSAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CE6A63248F82E34F728738A230F2A0D /* MSAlertController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSAlertController-umbrella.h"; sourceTree = "<group>"; };
+		6997B98E9D45211E26244489BC5FFA43 /* SASecretCommandViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SASecretCommandViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7473B33F3B1DB55D5525EE849A293875 /* Pods-SASecretCommandViewControllerSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SASecretCommandViewControllerSample.debug.xcconfig"; sourceTree = "<group>"; };
 		7928971CEB3E48A2E7803AEF7A691C55 /* Pods-SASecretCommandViewControllerSample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SASecretCommandViewControllerSample-resources.sh"; sourceTree = "<group>"; };
-		79D125AFEADB66164DB1FCD23238F453 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833C3D2EA5F8AD27E54966AACF61EDA2 /* SASecretCommandViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SASecretCommandViewController.xcconfig; sourceTree = "<group>"; };
-		8DCC195DCD1DBB3965240D6E669AE298 /* SASecretCommandViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SASecretCommandViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A991D3E5F7E5D8E4D9576ABA9E938D45 /* MSAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MSAlertController.modulemap; sourceTree = "<group>"; };
-		AAD78DD634C847BF7C0E8FCA32C2F08E /* Pods_SASecretCommandViewControllerSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SASecretCommandViewControllerSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6465650B8BE44BD93AEAB951152165 /* SASecretCommandView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SASecretCommandView.swift; sourceTree = "<group>"; };
-		B868187D4B6AF5A7F309CC76F82F7EF9 /* MSAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MSAlertController-dummy.m"; sourceTree = "<group>"; };
 		C0CD7C760DE75D5E6374D6993EA31593 /* SASecretCommandViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SASecretCommandViewController.modulemap; sourceTree = "<group>"; };
 		C309357FE763B3302ED1DBB45E706025 /* Pods-SASecretCommandViewControllerSample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SASecretCommandViewControllerSample-frameworks.sh"; sourceTree = "<group>"; };
-		D2BB8E51133BC4927D5BFAB8C7F1B048 /* MSAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSAlertController.h; path = MSAlertController/MSAlertController.h; sourceTree = "<group>"; };
 		D8B80388AF523A17A131DF70AA1DB14E /* Pods-SASecretCommandViewControllerSample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SASecretCommandViewControllerSample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D8EA20C44CBE00BF0474DFA574D01E0C /* Pods-SASecretCommandViewControllerSample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SASecretCommandViewControllerSample-dummy.m"; sourceTree = "<group>"; };
-		DB53A88282866B8A9BB3B51C51DCAB60 /* MSAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MSAlertController-prefix.pch"; sourceTree = "<group>"; };
 		DD66BE30A60A8C30AF700A3453E82A9D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		EF9CCA178AB74C8177CFC377B12E5F12 /* Pods_SASecretCommandViewControllerSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SASecretCommandViewControllerSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BAD6FCFC93F2CCCBD53D9BF29E282F /* Pods-SASecretCommandViewControllerSample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SASecretCommandViewControllerSample-umbrella.h"; sourceTree = "<group>"; };
 		F8393F11991EC52CA3694469FC2486D6 /* SASecretCommandViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SASecretCommandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		363599B47CED933872869271ECCF8FED /* Frameworks */ = {
+		919FF652511585738576D1811B8C56D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C89B180FCAEBAA46D71DCBCD3497C38F /* Foundation.framework in Frameworks */,
-				D786AC4EDC583E7ED9EB335AD75261DA /* QuartzCore.framework in Frameworks */,
-				6ED544254099BB1BD10C9FAFDD173480 /* UIKit.framework in Frameworks */,
+				ECB020C6B353C6B6A04A2F4A1711F037 /* Foundation.framework in Frameworks */,
+				BC9C66B081C394DDB103BAC480813C01 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E2D497947F019273804280CEF131F59 /* Frameworks */ = {
+		C9996B4946FDE2951016E398E16820A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9851D7EB9BE6FAF819BD9EB5E0C4EB32 /* Foundation.framework in Frameworks */,
-				124A53B86F6F25DF599924FF335F795F /* QuartzCore.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5058B053E19518C8C2211B212AE85E22 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EA281C70F890B5D4B5C03640E68C1F3C /* Foundation.framework in Frameworks */,
+				38FA35923814C6EA672CD3CF2E2FFF8E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,14 +85,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		195405B5469F9C82665AB368EF5E3D0B /* SASecretCommandViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,14 +95,21 @@
 			path = SASecretCommandViewController;
 			sourceTree = "<group>";
 		};
-		2CA93368AA8CDEAE47CC59910913B75D /* Products */ = {
+		3DF4C92D0467E5B7341B3AC6C3797569 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49E22AFD540A427824A70261C2A40245 /* MSAlertController.framework */,
-				AAD78DD634C847BF7C0E8FCA32C2F08E /* Pods_SASecretCommandViewControllerSample.framework */,
-				8DCC195DCD1DBB3965240D6E669AE298 /* SASecretCommandViewController.framework */,
+				EF9CCA178AB74C8177CFC377B12E5F12 /* Pods_SASecretCommandViewControllerSample.framework */,
+				6997B98E9D45211E26244489BC5FFA43 /* SASecretCommandViewController.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89F803C7E2D77E11F2120CB28FE0B795 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		5F06B1945A3AA16BC2A12FEF44EE89E7 /* Support Files */ = {
@@ -165,50 +126,24 @@
 			path = "SASecretCommandViewControllerSample/Pods/Target Support Files/SASecretCommandViewController";
 			sourceTree = "<group>";
 		};
-		6B5547BAEA67CB70CBE6408FE70AD9C4 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				474E30E64EAF7B4A533B24183E26F661 /* MSAlertController.xib */,
-				1388D7E3544788EF70765FBD636C3ED4 /* MSAlertController_ActionSheet.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		6BFE96A3334ED39A32BAB8E253D5E84A /* MSAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				D2BB8E51133BC4927D5BFAB8C7F1B048 /* MSAlertController.h */,
-				10F34C7739EAE30DDE74BD24224B781A /* MSAlertController.m */,
-				6B5547BAEA67CB70CBE6408FE70AD9C4 /* Resources */,
-				83C7A908216E27C367B049F9D8D98B15 /* Support Files */,
-			);
-			path = MSAlertController;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				93FB34AB67A866CD7AE43D6755CFB061 /* Development Pods */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				D1EC0AB4BF0E26EEFF0DB14832CD4C44 /* Pods */,
-				2CA93368AA8CDEAE47CC59910913B75D /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				3DF4C92D0467E5B7341B3AC6C3797569 /* Products */,
 				06DF001B790DACC9343D022715FB6A3B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		83C7A908216E27C367B049F9D8D98B15 /* Support Files */ = {
+		89F803C7E2D77E11F2120CB28FE0B795 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				79D125AFEADB66164DB1FCD23238F453 /* Info.plist */,
-				A991D3E5F7E5D8E4D9576ABA9E938D45 /* MSAlertController.modulemap */,
-				03504FA827F114051D5A9DB5CBFF89D5 /* MSAlertController.xcconfig */,
-				B868187D4B6AF5A7F309CC76F82F7EF9 /* MSAlertController-dummy.m */,
-				DB53A88282866B8A9BB3B51C51DCAB60 /* MSAlertController-prefix.pch */,
-				6CE6A63248F82E34F728738A230F2A0D /* MSAlertController-umbrella.h */,
+				90AAE8973B935FD4979EEDFB8B1E12AC /* Foundation.framework */,
+				EB0B5C34B0704CE42DB8ACE437DB6B71 /* QuartzCore.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MSAlertController";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		93FB34AB67A866CD7AE43D6755CFB061 /* Development Pods */ = {
@@ -217,14 +152,6 @@
 				D966973A57B48122A6B39E223EFCF52C /* SASecretCommandViewController */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		D1EC0AB4BF0E26EEFF0DB14832CD4C44 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6BFE96A3334ED39A32BAB8E253D5E84A /* MSAlertController */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		D6AD8B2246D93AB520BD49103F24168A /* Pods-SASecretCommandViewControllerSample */ = {
@@ -255,72 +182,53 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		DFDE779C6E5D3445E0CB8CCB8D424449 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				A817CAE99C81EE68006DC1E60E295C0A /* Foundation.framework */,
-				23016F69B2480F44D0BB5526B39192FA /* QuartzCore.framework */,
-				091D54A73E1E8BB182C9D7D245AF1C2F /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		35DE7D379D357DEC1C287C2B5480039A /* Headers */ = {
+		BFD60A2A0DA9990430318C3899FC684C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A685A53B9E2A31035ACD2800A1C41AC /* SASecretCommandViewController-umbrella.h in Headers */,
+				AFB626AFA4538D67C705ED9067120A18 /* Pods-SASecretCommandViewControllerSample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		99014E8282524FB461A334CD7E0F9C7A /* Headers */ = {
+		D0C6E04D2E6585E091766ED4F34F2AFF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B0C71760E6947DDED78AF5812ABA8B /* Pods-SASecretCommandViewControllerSample-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B67D256DB888981E32DBC07E2A45A2F9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				092638F5A425509CE27D531E7BADFECD /* MSAlertController-umbrella.h in Headers */,
-				4037E359AD08E62512821E40CF78228B /* MSAlertController.h in Headers */,
+				9675981B4BCCCFE97A9A5F63F180DC42 /* SASecretCommandViewController-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		20061A5681DF35957A00C8B50D120BC0 /* MSAlertController */ = {
+		6A7EA7362BC7D3683ECECAFE56AF4D5C /* Pods-SASecretCommandViewControllerSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98FF3E1E22FB55AEAC1901E32C5A6487 /* Build configuration list for PBXNativeTarget "MSAlertController" */;
+			buildConfigurationList = 0663745DBF8210AD57E957F210F68A88 /* Build configuration list for PBXNativeTarget "Pods-SASecretCommandViewControllerSample" */;
 			buildPhases = (
-				17EFC25D910FD06A0E985F020C009E97 /* Sources */,
-				363599B47CED933872869271ECCF8FED /* Frameworks */,
-				B67D256DB888981E32DBC07E2A45A2F9 /* Headers */,
-				82348098307A7925164BE5D3061A90AF /* Resources */,
+				1FB81F615FC4694531B65E5EAFB11091 /* Sources */,
+				C9996B4946FDE2951016E398E16820A5 /* Frameworks */,
+				BFD60A2A0DA9990430318C3899FC684C /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F06F752A3550E2C2F16FF1B356BEFCFA /* PBXTargetDependency */,
 			);
-			name = MSAlertController;
-			productName = MSAlertController;
-			productReference = 49E22AFD540A427824A70261C2A40245 /* MSAlertController.framework */;
+			name = "Pods-SASecretCommandViewControllerSample";
+			productName = "Pods-SASecretCommandViewControllerSample";
+			productReference = EF9CCA178AB74C8177CFC377B12E5F12 /* Pods_SASecretCommandViewControllerSample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3F963E59DB81A841AA8DA30DAF570EF2 /* SASecretCommandViewController */ = {
+		AF8C6C03B5AEE2ABED343771B252C0E1 /* SASecretCommandViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 494BA05B73CD5D3A15C9697750E127B0 /* Build configuration list for PBXNativeTarget "SASecretCommandViewController" */;
+			buildConfigurationList = 64DAEB712F20F9A20498B91586158355 /* Build configuration list for PBXNativeTarget "SASecretCommandViewController" */;
 			buildPhases = (
-				7D17623023397B2AD8F39BDB2DA4ADB8 /* Sources */,
-				4E2D497947F019273804280CEF131F59 /* Frameworks */,
-				35DE7D379D357DEC1C287C2B5480039A /* Headers */,
+				1444864383A32B05E5551AFB918A32E2 /* Sources */,
+				919FF652511585738576D1811B8C56D9 /* Frameworks */,
+				D0C6E04D2E6585E091766ED4F34F2AFF /* Headers */,
 			);
 			buildRules = (
 			);
@@ -328,26 +236,7 @@
 			);
 			name = SASecretCommandViewController;
 			productName = SASecretCommandViewController;
-			productReference = 8DCC195DCD1DBB3965240D6E669AE298 /* SASecretCommandViewController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BDD391D332B74E45B34C243CAE76EEA3 /* Pods-SASecretCommandViewControllerSample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FB9286D9C00DA6CDA4F09C8AE4F1016A /* Build configuration list for PBXNativeTarget "Pods-SASecretCommandViewControllerSample" */;
-			buildPhases = (
-				9C980C18FAC56D2DD33C651186556F50 /* Sources */,
-				5058B053E19518C8C2211B212AE85E22 /* Frameworks */,
-				99014E8282524FB461A334CD7E0F9C7A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B98BEF276020E854F2F126E602416F4A /* PBXTargetDependency */,
-				EC1C3479F0A0FD698C6E2D1949D0185E /* PBXTargetDependency */,
-			);
-			name = "Pods-SASecretCommandViewControllerSample";
-			productName = "Pods-SASecretCommandViewControllerSample";
-			productReference = AAD78DD634C847BF7C0E8FCA32C2F08E /* Pods_SASecretCommandViewControllerSample.framework */;
+			productReference = 6997B98E9D45211E26244489BC5FFA43 /* SASecretCommandViewController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -367,72 +256,44 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2CA93368AA8CDEAE47CC59910913B75D /* Products */;
+			productRefGroup = 3DF4C92D0467E5B7341B3AC6C3797569 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				20061A5681DF35957A00C8B50D120BC0 /* MSAlertController */,
-				BDD391D332B74E45B34C243CAE76EEA3 /* Pods-SASecretCommandViewControllerSample */,
-				3F963E59DB81A841AA8DA30DAF570EF2 /* SASecretCommandViewController */,
+				6A7EA7362BC7D3683ECECAFE56AF4D5C /* Pods-SASecretCommandViewControllerSample */,
+				AF8C6C03B5AEE2ABED343771B252C0E1 /* SASecretCommandViewController */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		82348098307A7925164BE5D3061A90AF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76D5F8F3A7DBEC0C061A146D464735F9 /* MSAlertController.xib in Resources */,
-				8CA5E6B602910F8FB2BE2211316F414C /* MSAlertController_ActionSheet.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		17EFC25D910FD06A0E985F020C009E97 /* Sources */ = {
+		1444864383A32B05E5551AFB918A32E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D8C9E974AE1ECDEDA6939211649F863 /* MSAlertController-dummy.m in Sources */,
-				7D86D80AA8943B1F72BEA842B9A53F6B /* MSAlertController.m in Sources */,
+				67ABA7F9110DF2BAD7DBD54691E17813 /* SASecretCommandManager.swift in Sources */,
+				E08296938E86C860B26F486DA25BC666 /* SASecretCommandView.swift in Sources */,
+				CC4E0DEA56A87E014DC9A3CDB80FE6E3 /* SASecretCommandViewController-dummy.m in Sources */,
+				197BE95CFAC56AA63573ADA410AD066A /* SASecretCommandViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D17623023397B2AD8F39BDB2DA4ADB8 /* Sources */ = {
+		1FB81F615FC4694531B65E5EAFB11091 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466C2D2119876739796388A9CD20E007 /* SASecretCommandManager.swift in Sources */,
-				3121497B5E4EC51B7FAE4CE811E69587 /* SASecretCommandView.swift in Sources */,
-				C766BEE95AC52934988543C6C89D1145 /* SASecretCommandViewController-dummy.m in Sources */,
-				853461090C0EAEF53DC2A8408CB231B3 /* SASecretCommandViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9C980C18FAC56D2DD33C651186556F50 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DFA01613C1758A5A3984A1EFBC01A341 /* Pods-SASecretCommandViewControllerSample-dummy.m in Sources */,
+				3AE4CE05670373BFFFA8EE55218E1435 /* Pods-SASecretCommandViewControllerSample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B98BEF276020E854F2F126E602416F4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MSAlertController;
-			target = 20061A5681DF35957A00C8B50D120BC0 /* MSAlertController */;
-			targetProxy = B868DF0E1CBAB59366695ACDA5B4B584 /* PBXContainerItemProxy */;
-		};
-		EC1C3479F0A0FD698C6E2D1949D0185E /* PBXTargetDependency */ = {
+		F06F752A3550E2C2F16FF1B356BEFCFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SASecretCommandViewController;
-			target = 3F963E59DB81A841AA8DA30DAF570EF2 /* SASecretCommandViewController */;
-			targetProxy = 8D2A478D1DD8DBB2578307A83630C894 /* PBXContainerItemProxy */;
+			target = AF8C6C03B5AEE2ABED343771B252C0E1 /* SASecretCommandViewController */;
+			targetProxy = 47EAB7CA726085924ACEC823E72C86BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -481,42 +342,7 @@
 			};
 			name = Debug;
 		};
-		0DEDF8F293BC06100B5635EF99478115 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C7600F779FB8CF272517B61D6D8C40E /* Pods-SASecretCommandViewControllerSample.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SASecretCommandViewControllerSample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SASecretCommandViewControllerSample/Pods-SASecretCommandViewControllerSample.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SASecretCommandViewControllerSample;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		0EF6BFBFBA4D6D8BB5BBBCF0B8C087F6 /* Release */ = {
+		272D7F708C24BE915374A42FBDBAAD96 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 833C3D2EA5F8AD27E54966AACF61EDA2 /* SASecretCommandViewController.xcconfig */;
 			buildSettings = {
@@ -541,44 +367,45 @@
 				PRODUCT_NAME = SASecretCommandViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		18D6B5A91B42515DACC92C468F8A0E51 /* Release */ = {
+		3B040F4B9A2DEC32D57316233C44188A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03504FA827F114051D5A9DB5CBFF89D5 /* MSAlertController.xcconfig */;
+			baseConfigurationReference = 833C3D2EA5F8AD27E54966AACF61EDA2 /* SASecretCommandViewController.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MSAlertController/MSAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MSAlertController/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SASecretCommandViewController/SASecretCommandViewController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SASecretCommandViewController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MSAlertController/MSAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MSAlertController;
+				MODULEMAP_FILE = "Target Support Files/SASecretCommandViewController/SASecretCommandViewController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SASecretCommandViewController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -620,72 +447,42 @@
 			};
 			name = Release;
 		};
-		9E464206BA4DC75C8880FACA95040F05 /* Debug */ = {
+		85E53A5320804033C27C9B38A0A5E995 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03504FA827F114051D5A9DB5CBFF89D5 /* MSAlertController.xcconfig */;
+			baseConfigurationReference = 0C7600F779FB8CF272517B61D6D8C40E /* Pods-SASecretCommandViewControllerSample.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MSAlertController/MSAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MSAlertController/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SASecretCommandViewControllerSample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MSAlertController/MSAlertController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MSAlertController;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SASecretCommandViewControllerSample/Pods-SASecretCommandViewControllerSample.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SASecretCommandViewControllerSample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		B1D9E7B5535FC5CED0A89DADDA95A9BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 833C3D2EA5F8AD27E54966AACF61EDA2 /* SASecretCommandViewController.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SASecretCommandViewController/SASecretCommandViewController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SASecretCommandViewController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SASecretCommandViewController/SASecretCommandViewController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SASecretCommandViewController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DEE6CB6F7B2BBFAD1C0CFA62DC6901A8 /* Debug */ = {
+		DB8DA4C936D7B35BF1970B96C76BD70E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7473B33F3B1DB55D5525EE849A293875 /* Pods-SASecretCommandViewControllerSample.debug.xcconfig */;
 			buildSettings = {
@@ -724,6 +521,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0663745DBF8210AD57E957F210F68A88 /* Build configuration list for PBXNativeTarget "Pods-SASecretCommandViewControllerSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8DA4C936D7B35BF1970B96C76BD70E /* Debug */,
+				85E53A5320804033C27C9B38A0A5E995 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -733,29 +539,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		494BA05B73CD5D3A15C9697750E127B0 /* Build configuration list for PBXNativeTarget "SASecretCommandViewController" */ = {
+		64DAEB712F20F9A20498B91586158355 /* Build configuration list for PBXNativeTarget "SASecretCommandViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B1D9E7B5535FC5CED0A89DADDA95A9BC /* Debug */,
-				0EF6BFBFBA4D6D8BB5BBBCF0B8C087F6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		98FF3E1E22FB55AEAC1901E32C5A6487 /* Build configuration list for PBXNativeTarget "MSAlertController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9E464206BA4DC75C8880FACA95040F05 /* Debug */,
-				18D6B5A91B42515DACC92C468F8A0E51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FB9286D9C00DA6CDA4F09C8AE4F1016A /* Build configuration list for PBXNativeTarget "Pods-SASecretCommandViewControllerSample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DEE6CB6F7B2BBFAD1C0CFA62DC6901A8 /* Debug */,
-				0DEDF8F293BC06100B5635EF99478115 /* Release */,
+				3B040F4B9A2DEC32D57316233C44188A /* Debug */,
+				272D7F708C24BE915374A42FBDBAAD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
